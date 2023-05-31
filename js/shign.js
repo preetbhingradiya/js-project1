@@ -1,15 +1,33 @@
-document.querySelector("form").addEventListener("submit",(e)=>{
-    e.preventDefault()
+document.querySelector("form").addEventListener("submit", (e) => {
+  e.preventDefault();
 
-    let data={
-        firstname:document.getElementById("fname").value,
-        lastname:document.getElementById("lname").value,
-        email:document.getElementById("emil").value,
-        password:document.getElementById("pass").value,
-        conformpass:document.getElementById("conforpass").value,
-    }
+  let data = {
+    firstname: document.getElementById("fname").value,
+    lastname: document.getElementById("lname").value,
+    email: document.getElementById("emil").value,
+    password: document.getElementById("pass").value,
+    conformpass: document.getElementById("conforpass").value,
+  };
 
-    localStorage.setItem("sign-up  page",JSON.stringify(data))
+  localStorage.setItem("user-data", JSON.stringify(data));
 
-    console.log(data);
-})
+  if(data.password==data.conformpass){
+    location.href="../index.html"
+  }
+  else{
+    alert("check the password and try again")
+  }
+
+  console.log(data);
+});
+
+let btn = document.getElementById("show");
+let password = document.getElementById("pass");
+
+btn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  btn.className = `fa-solid fa-eye${password.type === "password" ? "" : "-slash"}`;
+
+  password.type = password.type === "password" ? "text" : "password";
+});
