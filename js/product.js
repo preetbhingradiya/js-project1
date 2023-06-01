@@ -27,25 +27,22 @@ let show = (data) => {
 
     add.addEventListener("click", () => {
       let store = JSON.parse(localStorage.getItem("cart")) || [];
-      // console.log(store);
-      // store.push(temp);
+
       let exit = false;
-      store.push(temp);
-      
-      store.map((ele) => {
-        if (ele.id == temp.id) {
+
+      store.map((val,index) => {
+        if (val.id == temp.id) {
+          store[index].qty +=1
+          localStorage.setItem("cart", JSON.stringify(store));
           exit = true;
-          console.log(ele);
         }
       });
 
-      if(exit==false){
-        store.push({ ...temp, qty: 1 });
+      if (!exit) {
+        store.push({...temp,qty:1})
         localStorage.setItem("cart", JSON.stringify(store));
-        window.location.reload();
+        alert("add to cart");
       }
-
-      // localStorage.setItem("cart", JSON.stringify(store));
     });
   });
 };
