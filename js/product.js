@@ -5,6 +5,7 @@ document.querySelector(".navbar").innerHTML = nav();
 let show = (data) => {
   data.map((temp) => {
     let div = document.createElement("div");
+    div.setAttribute("class","box")
 
     let image = document.createElement("img");
     image.src = temp.images[0];
@@ -20,9 +21,13 @@ let show = (data) => {
     rat.innerHTML = `Rating :${temp.rating}`;
     let add = document.createElement("button");
     add.innerHTML = "add to cart";
+    add.setAttribute("class","btn1")
     let buy = document.createElement("button");
     buy.innerHTML = "buy now";
-    div.append(image, titale, desc, pri, cat, rat, add, buy);
+    buy.setAttribute("class","btn2")
+    let btn = document.createElement("div");
+    btn.append(add, buy);
+    div.append(image, titale, desc, pri, cat, rat,btn);
     document.querySelector(".product").append(div);
 
     add.addEventListener("click", () => {
@@ -30,16 +35,16 @@ let show = (data) => {
 
       let exit = false;
 
-      store.map((val,index) => {
+      store.map((val, index) => {
         if (val.id == temp.id) {
-          store[index].qty +=1
+          store[index].qty += 1;
           localStorage.setItem("cart", JSON.stringify(store));
           exit = true;
         }
       });
 
       if (!exit) {
-        store.push({...temp,qty:1})
+        store.push({ ...temp, qty: 1 });
         localStorage.setItem("cart", JSON.stringify(store));
         alert("add to cart");
       }

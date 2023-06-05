@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/sign.css">
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
   <section>
@@ -21,17 +21,31 @@
     </div>
   </section>
 
-      <form>
+  <form>
+        <div class="round">
+          <i class="fa-solid fa-user"></i>
+        </div>
         <div class="fixed">
           <h2>Login-page </h2>
-          <input type="email" placeholder="Enter your email" id="emil">
-          <input type="password" placeholder="enter password" id="password">
+          <div class="check">
+            <input type="email" placeholder="Email id" id="emil">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="check">
+            <input type="password" placeholder="Password" id="password">
+            <i class="fa-solid fa-lock"></i>
+          </div>
           <div clas="wrapper">
-              <input type="submit" value="Sign-up" class="btn">
+              <input type="submit" value="login" class="btn">
           </div>
         </div>
     </form>
 </body>
   <script src="../js/login.js" type="module"></script>
+
+  <script
+  src="https://kit.fontawesome.com/e500e5c4a4.js"
+  crossorigin="anonymous"
+></script>
 
 </html>
