@@ -1,4 +1,4 @@
-import nav from "../node/index.js";
+import nav from "../extra/index.js";
 
 document.querySelector(".navbar").innerHTML = nav();
 
