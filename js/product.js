@@ -5,7 +5,7 @@ document.querySelector(".navbar").innerHTML = nav();
 let show = (data) => {
   data.map((temp) => {
     let div = document.createElement("div");
-    div.setAttribute("class","box")
+    div.setAttribute("class", "box");
 
     let image = document.createElement("img");
     image.src = temp.images[0];
@@ -21,18 +21,17 @@ let show = (data) => {
     rat.innerHTML = `Rating :${temp.rating}`;
     let add = document.createElement("button");
     add.innerHTML = "add to cart";
-    add.setAttribute("class","btn1")
+    add.setAttribute("class", "btn1");
     let buy = document.createElement("button");
     buy.innerHTML = "buy now";
-    buy.setAttribute("class","btn2")
+    buy.setAttribute("class", "btn2");
     let btn = document.createElement("div");
     btn.append(add, buy);
-    div.append(image, titale, desc, pri, cat, rat,btn);
+    div.append(image, titale, desc, pri, cat, rat, btn);
     document.querySelector(".product").append(div);
 
     add.addEventListener("click", () => {
       let store = JSON.parse(localStorage.getItem("cart")) || [];
-
       let exit = false;
 
       store.map((val, index) => {
@@ -43,10 +42,10 @@ let show = (data) => {
         }
       });
 
-      if (!exit) {
-        store.push({ ...temp, qty: 1 });
+      if(!exit){
+        store.push({...temp,qty:1})
         localStorage.setItem("cart", JSON.stringify(store));
-        alert("add to cart");
+        alert("add to carrt")
       }
     });
   });
