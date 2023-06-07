@@ -11,6 +11,7 @@
     display: grid;
     grid-template-columns: repeat(4,1fr);
     margin-bottom: 18px;
+    border-bottom: 2px solid;
 }
 #cart h2{
    margin-bottom: 20px;
@@ -40,6 +41,7 @@ img{
     border-radius: 2px;
     display: block;   width: 150px;
     height: 150px;
+    margin-bottom: 5px;
 }
 #cart .titale{
 
