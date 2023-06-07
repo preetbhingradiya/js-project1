@@ -9,7 +9,7 @@ const show = (data) => {
   for (let i = 0; i < cart.length; i++) {
     price += cart[i].price * cart[i].qty;
   }
-  document.getElementById("total-pri").innerHTML=`Total-prices :${price}`
+  document.getElementById("total-pri").innerHTML=`Total-prices :$${price}`
 
   data.map((ele) => {
     let div = document.createElement("div");
@@ -78,15 +78,17 @@ const show = (data) => {
     let obj={
       discount:a
     }
-    console.log(obj.discount);
     if(obj.discount=="20%"){
-      document.getElementById("dis").innerHTML=`discount-price :${price-dis1}`
+      document.getElementById("dis").innerHTML=`discount-price :$${price-dis1}`
     }
     else if(obj.discount=="50%"){
-      document.getElementById("dis").innerHTML=`discount-price :${price-dis2}`
+      document.getElementById("dis").innerHTML=`discount-price :$${price-dis2}`
     }
     else if(obj.discount=="70%"){
-      document.getElementById("dis").innerHTML=`discount-price :${price-dis3}`
+      document.getElementById("dis").innerHTML=`discount-price :$${price-dis3}`
+    }
+    else if(obj.discount=="no discount"){
+      document.getElementById("dis").innerHTML=`No discount rate`
     }
   })
 };

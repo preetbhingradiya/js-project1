@@ -1,5 +1,7 @@
 .section{
     display: flex;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 20px;
 }
 #cart{
     width: 70%;
@@ -56,4 +58,51 @@ img{
 }
 #applay{
     width: 30%;
+}
+#applay{
+    line-height: 50px;
+    background-color: #eae2e27b;
+    padding: 150px 0 0 70px;
+}
+#total-pri{
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+}
+#applay h2{
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+#size{
+    display: block;
+}
+#done{
+    margin-top: 40px;
+    padding: 10px 40px;
+    font-size: 16px;
+    border: 0;
+    background-color: pink;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+#done:hover{
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    perspective: 1000px;
+}
+
+
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+    
+    30%, 50%, 70% {
+      transform: translate3d(-2px, 0, 0);
+    }
+    40%, 60% {
+      transform: translate3d(2px, 0, 0);
+  }
 }
