@@ -9,7 +9,7 @@ const show = (data) => {
   for (let i = 0; i < cart.length; i++) {
     price += cart[i].price * cart[i].qty;
   }
-  console.log(price);
+  document.getElementById("total-pri").innerHTML=`Total-prices :${price}`
 
   data.map((ele) => {
     let div = document.createElement("div");
@@ -18,7 +18,7 @@ const show = (data) => {
     let img = document.createElement("img");
     img.src = ele.images[0];
 
-    let titale = document.createElement("h2");
+    let titale = document.createElement("h3");
     titale.innerHTML = ele.title;
     let cat = document.createElement("h5");
     cat.innerHTML = ele.category;
@@ -73,3 +73,4 @@ const show = (data) => {
 };
 
 show(cart);
+
