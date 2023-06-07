@@ -89,7 +89,12 @@ img{
     transform: translate3d(0, 0, 0);
     perspective: 1000px;
 }
-
+.qyt button{
+    padding: 1px 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    font-size: 18px;
+}
 
 @keyframes shake {
     10%, 90% {
