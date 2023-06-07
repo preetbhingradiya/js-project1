@@ -70,7 +70,25 @@ const show = (data) => {
     });
 
   });
+  document.getElementById("done").addEventListener("click",()=>{
+    let a=document.getElementById("size").value
+    let dis1=parseInt(price*20/100)
+    let dis2=parseInt(price*50/100)
+    let dis3=parseInt(price*70/100)
+    let obj={
+      discount:a
+    }
+    console.log(obj.discount);
+    if(obj.discount=="20%"){
+      document.getElementById("dis").innerHTML=`discount-price :${price-dis1}`
+    }
+    else if(obj.discount=="50%"){
+      document.getElementById("dis").innerHTML=`discount-price :${price-dis2}`
+    }
+    else if(obj.discount=="70%"){
+      document.getElementById("dis").innerHTML=`discount-price :${price-dis3}`
+    }
+  })
 };
 
 show(cart);
-
