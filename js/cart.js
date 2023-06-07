@@ -29,7 +29,7 @@ const show = (data) => {
     let incre = document.createElement("button");
     incre.innerHTML = "+";
     let quntity = document.createElement("p");
-    quntity.innerHTML = 1;
+    quntity.innerHTML = ele.qty;
     let desc = document.createElement("button");
     desc.innerHTML = "-";
     let store = document.createElement("div");
@@ -50,9 +50,10 @@ const show = (data) => {
 
       cart.map((val, index) => {
         if (val.id == ele.id) {
-          // console.log((cart[index].qty += 1));
-          document.querySelector("p").innerHTML = cart[index].qty += 1;
+          cart[index].qty+= 1
+          // document.querySelector("p").innerHTML = cart[index].qty += 1;
           localStorage.setItem("cart", JSON.stringify(cart));
+          window.location.reload()
         }
       });
     });
@@ -62,9 +63,10 @@ const show = (data) => {
 
       cart.map((val, index) => {
         if (val.id == ele.id) {
-          // console.log((cart[index].qty -= 1));
-          document.querySelector("p").innerHTML = cart[index].qty -= 1;
+          cart[index].qty-= 1
+          // document.querySelector("p").innerHTML = cart[index].qty -= 1;
           localStorage.setItem("cart", JSON.stringify(cart));
+          window.location.reload()
         }
       });
     });
