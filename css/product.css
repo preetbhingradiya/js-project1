@@ -50,7 +50,7 @@ div{
     transition: all 0.3s ease;
 }
 .btn1:hover{
-    transform: rotate(-15deg);
+    transform: scale(0.8);
     background-color: #fff;
     border: 2px solid rgba(0, 0, 0, 0.823);
     color: black;
@@ -68,7 +68,7 @@ div{
     transition: all 0.3s ease;
 }
 .btn2:hover{
-    transform: rotate(15deg);
+    transform: scale(0.8);  
     background-color: rgba(0, 0, 0, 0.823);
     color: #fff;
 }

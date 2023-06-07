@@ -36,7 +36,13 @@ const show = (data) => {
     store.setAttribute("class", "qyt");
     store.append(desc, quntity, incre);
 
-    div.append(img, temp, store);
+    let pri = document.createElement("h4");
+    pri.innerHTML = `Price :$ ${ele.price}`;
+    let wrapeer=document.createElement("div")
+    wrapeer.setAttribute("class","price")
+    wrapeer.append(pri)
+
+    div.append(img, temp, store,wrapeer);
     document.getElementById("cart").append(div);
 
     incre.addEventListener("click", () => {
@@ -44,7 +50,8 @@ const show = (data) => {
 
       cart.map((val, index) => {
         if (val.id == ele.id) {
-            console.log((cart[index].qty += 1));
+          // console.log((cart[index].qty += 1));
+          document.querySelector("p").innerHTML = cart[index].qty += 1;
           localStorage.setItem("cart", JSON.stringify(cart));
         }
       });
@@ -55,12 +62,13 @@ const show = (data) => {
 
       cart.map((val, index) => {
         if (val.id == ele.id) {
-    
-          console.log( (cart[index].qty -= 1));
+          // console.log((cart[index].qty -= 1));
+          document.querySelector("p").innerHTML = cart[index].qty -= 1;
           localStorage.setItem("cart", JSON.stringify(cart));
         }
       });
     });
+
   });
 };
 

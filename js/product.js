@@ -14,7 +14,7 @@ let show = (data) => {
     let desc = document.createElement("p");
     desc.innerHTML = `Description :${temp.description}`;
     let pri = document.createElement("h4");
-    pri.innerHTML = `Price :${temp.price}`;
+    pri.innerHTML = `Price :$ ${temp.price}`;
     let cat = document.createElement("h5");
     cat.innerHTML = `Category :${temp.category}`;
     let rat = document.createElement("p");
