@@ -11,8 +11,11 @@ document.querySelector("form").addEventListener("submit", (e) => {
 
   localStorage.setItem("user-data", JSON.stringify(data));
 
-  if(data.password==data.conformpass){
+  if(data.password==data.conformpass && data.password.length>=8){
     location.href="../index.html"
+  }
+  else if(data.password.length<=8){
+    alert("plese enter minimum 8 character")
   }
   else{
     alert("check the password and try again")
